@@ -14,6 +14,7 @@ This is an Image Classification API for classifying chest X-ray images into the 
 The API takes a chest X-ray image in jpeg format as input and returns class probabilities. Created using [FastAPI](https://fastapi.tiangolo.com/) framework.
 The EfficientNetB3 CNN model pretrained on the imagenet data-set is used and fine-tuned on the 
 [Curated Dataset for COVID-19 Posterior-Anterior Chest Radiography Images (X-Rays)](https://data.mendeley.com/datasets/9xkhgts2s6/3) data-set.
+Refer this [notebook](https://github.com/pmahajan11/Image-Classification-API-UbuntuVM/blob/17c89a1fcd3d4837365de93450cde13cfc3f1d84/Image%20Classification%20Model.ipynb).
 
 ---
 
