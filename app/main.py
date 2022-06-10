@@ -17,6 +17,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+def read_imagefile(file) -> Image.Image:
+    image = Image.open(BytesIO(file))
+    return image
+
+
 @app.get("/")
 async def root():
     return {"message": "This is a CNN Classification model API for classifying chest X-rays into one of the four categories: COVID-19, Normal, Pneumonia-Bacterial or Pneumonia-Viral. Returns class probabilities."}
@@ -31,12 +37,13 @@ async def predict_api(file: UploadFile = File(...)):
                             detail="Image must be in jepg format!")
 
     try:
-        image = np.asarray(Image.open(BytesIO(await file.read())))
+        image = np.asarray(read_imagefile(await file.read()))
         prediction = ml.predict_image(image)
 
     except Exception as e:
         raise HTTPException(status_code = status.HTTP_415_UNSUPPORTED_MEDIA_TYPE,
                             detail="Uploaded file is not an image!")
 
-    return prediction
+    return {"class_probabilities" : prediction}
+    
     
