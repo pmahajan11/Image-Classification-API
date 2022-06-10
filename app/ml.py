@@ -53,6 +53,6 @@ def predict_image(image, model=model):
     pred_dict = {"COVID-19": pred_list[0],
                  "Normal": pred_list[1],
                  "Pneumonia-Bacterial": pred_list[2],
-                 "Pneumonia-Virial": pred_list[3]}
+                 "Pneumonia-Viral": pred_list[3]}
     
     return pred_dict
