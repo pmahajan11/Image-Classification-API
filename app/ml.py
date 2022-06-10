@@ -49,9 +49,10 @@ model = build_model(model_weights_path=model_weights_path)
 def predict_image(image, model=model):
     pred = model.predict(preprocess_image(image))
     pred = np.round(pred[0], decimals=4)
-    pred_dict = {"COVID-19": pred[0],
-                 "Normal": pred[1],
-                 "Pneumonia-Bacterial": pred[2],
-                 "Pneumonia-Virial": pred[3]}
+    pred_list = pred.tolist()
+    pred_dict = {"COVID-19": pred_list[0],
+                 "Normal": pred_list[1],
+                 "Pneumonia-Bacterial": pred_list[2],
+                 "Pneumonia-Virial": pred_list[3]}
     
     return pred_dict
