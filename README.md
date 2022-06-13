@@ -4,18 +4,18 @@
 
 ## Brief Description
 
-This is an Image Classification API for classifying chest X-ray images into the following categories/classes:
+This is an Image Classification model for classifying chest X-ray images into the following categories/classes:
 
 - COVID-19
 - Normal
 - Pneumonia-Bacterial
 - Pneumonia-Viral
 
-The API takes a chest X-ray image in jpeg format as input and returns class probabilities. Created using [FastAPI](https://fastapi.tiangolo.com/) framework.
+The [model](https://github.com/pmahajan11/Image-Classification-API-UbuntuVM/blob/17c89a1fcd3d4837365de93450cde13cfc3f1d84/Image%20Classification%20Model.ipynb) takes a chest X-ray image in jpeg format as input and returns class probabilities.
 The EfficientNetB3 CNN model pretrained on the imagenet data-set is used and fine-tuned on the 
 [Curated Dataset for COVID-19 Posterior-Anterior Chest Radiography Images (X-Rays)](https://data.mendeley.com/datasets/9xkhgts2s6/3) data-set.
 
-Refer this [notebook](https://github.com/pmahajan11/Image-Classification-API-UbuntuVM/blob/17c89a1fcd3d4837365de93450cde13cfc3f1d84/Image%20Classification%20Model.ipynb).
+The final model was deployed as an API reated using [FastAPI](https://fastapi.tiangolo.com/) framework.
 
 ---
 
